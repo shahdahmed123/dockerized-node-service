@@ -294,8 +294,10 @@ Junior DevOps & Cloud Engineer | AWS
 GitHub:
 https://github.com/shahdahmed123
 
-⭐ If you found this project useful, feel free to give it a star!
+## Project
 
+This project is a solution for the **Nginx Log Analyser** challenge from roadmap.sh.
 
-## 🔥 
+Project URL:
+https://roadmap.sh/projects/dockerized-service-deployment
 
