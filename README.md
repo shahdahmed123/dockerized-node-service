@@ -10,7 +10,7 @@ This project demonstrates a complete CI/CD pipeline including Dockerization, con
 
 The application follows a simple CI/CD architecture where code changes are automatically built, containerized, pushed to GitHub Container Registry, and deployed to an AWS EC2 server.
 
-![Project Architecture](assets/architecture.png)
+![Project Architecture](assets/architecture.jpg)
 
 ### 🔄 Deployment Flow
 
