@@ -292,11 +292,10 @@ Shahd Ahmed
 Junior DevOps & Cloud Engineer | AWS
 
 GitHub:
-https://github.com/shahdahmed123
-
+https://github.com/shahdahmed123/dockerized-node-service.git
 ## Project
 
-This project is a solution for the **Nginx Log Analyser** challenge from roadmap.sh.
+This project is a solution for the **Dockerized Service** challenge from roadmap.sh.
 
 Project URL:
 https://roadmap.sh/projects/dockerized-service-deployment
