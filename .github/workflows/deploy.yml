@@ -33,3 +33,28 @@ jobs:
         run: |
           docker push \
             ghcr.io/${{ github.repository_owner }}/dockerized-node-service:latest
+    deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+
+          script: |
+            docker pull ghcr.io/${{ github.repository_owner }}/dockerized-node-service:latest
+
+            docker stop node-service || true
+            docker rm node-service || true
+
+            docker run -d \
+              --name node-service \
+              -p 3000:3000 \
+              -e USERNAME="${{ secrets.APP_USERNAME }}" \
+              -e PASSWORD="${{ secrets.APP_PASSWORD }}" \
+              -e SECRET_MESSAGE="${{ secrets.SECRET_MESSAGE }}" \
+              ghcr.io/${{ github.repository_owner }}/dockerized-node-service:latest
